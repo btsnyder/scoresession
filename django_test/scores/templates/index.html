@@ -2,7 +2,12 @@
 <html>
 <body>
   <h3>New Session?</h3>
-  <form action="http://127.0.0.1:8000/scores/loading">
+  <form action="loading/" method="get">
+    <text>Home Team: </text>
+    <input type="text" name="homeTeam" /> <br>
+    <text>Away Team: </text>
+    <input type="text" name="awayTeam" /> <br>
+    <input type="hidden" name="id" value={{id}} />
     <input type="submit" value="YES" />
   </form>
 </body>

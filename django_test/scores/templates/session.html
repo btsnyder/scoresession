@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <h3>Working</h3>
-  <text>{{name}}</text>
+  <h3>Session Details</h3>
+  <text>{{session.homeTeam}} v. {{session.awayTeam}}</text>
+  {% for copy in session.chat_set.all %}
+  <ul>
+    <li>
+      <text>{{copy.chat}}</text>
+    </li>
+  </ul>
+  {% endfor %}
+  <form action="" method="get">
+    <input type="hidden" name="id" value={{session.id}} />
+    <input type="text" name="chat">
+    <input type="submit" value="Submit"> <br>
+    <input type="submit" value="Refresh">
+  </form>
 </body>
 </html>

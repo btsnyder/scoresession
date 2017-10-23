@@ -6,8 +6,6 @@ class Session(models.Model):
     homeTeam = models.CharField(max_length=100);
     awayTeam = models.CharField(max_length=100);
 
-import uuid
-
-class SessionInstance(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+class Chat(models.Model):
     session = models.ForeignKey('Session', on_delete=models.SET_NULL, null=True)
+    chat = models.CharField(max_length=100);
